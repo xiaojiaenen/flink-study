@@ -3,7 +3,7 @@ package tableandsql
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.table.api.DataTypes
 import org.apache.flink.table.api.scala._
-import org.apache.flink.table.descriptors.{Csv, Kafka, Schema}
+import org.apache.flink.table.descriptors.{Csv, Json, Kafka, Schema}
 
 object KafkaPipelineTest {
 
@@ -57,7 +57,7 @@ object KafkaPipelineTest {
       .topic("sinktest")
       .property("bootstrap.servers", "master:9092")
     )
-      .withFormat(new Csv())
+      .withFormat(new Json())
       .withSchema(new Schema()
         .field("id", DataTypes.STRING())
         .field("count_", DataTypes.BIGINT())
