@@ -1,0 +1,5 @@
+package tableandsql
+
+object TimeAndWindowTest {
+
+}
